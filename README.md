@@ -1,4 +1,4 @@
-1. ÄÄÆÄÀÏ °úÁ¤
+##1. ì»´íŒŒì¼ ê³¼ì •
 gcc -g -Wall -pthread -c reentrant.c -o reentrant.o 
 gcc -g -Wall -pthread -c common.c -o common.o
 
@@ -8,7 +8,7 @@ gcc -g -Wall -pthread -c server.c -o server.o
 gcc -g -Wall -pthread -o client client.o common.o reentrant.o -lssl -lcrypto
 gcc -g -Wall -pthread -o server server.o common.o reentrant.o -lssl -lcrypto
 
-2. ÀÎÁõ¼­ ¸¸µé±â
+##2. ì¸ì¦ì„œ ë§Œë“¤ê¸°
 /usr/bin/openssl req -newkey rsa:1024 -sha1 -keyout rootkey.pem -out rootreq.pem -config root.cnf
 
 /usr/bin/openssl x509 -req -in rootreq.pem -sha1 -extfile root.cnf -extensions certificate_extensions -signkey rootkey.pem -out rootcert.pem
@@ -34,9 +34,9 @@ gcc -g -Wall -pthread -o server server.o common.o reentrant.o -lssl -lcrypto
 /bin/cat clientcert.pem clientkey.pem rootcert.pem > client.pem
 
 
-2. ½ÇÇà°úÁ¤
-	1) ./server ½ÇÇà -> ÀÎÁõ¼­ ¸¸µé¶§ »ç¿ëÇß´ø ºñ¹Ð¹øÈ£ ÀÔ·Â
-	2) ./client ½ÇÇà (´ÙÁß½ÇÇà°¡´É) -> ÀÎÁõ¼­ ¸¸µé¶§ »ç¿ëÇß´ø ºñ¹Ð¹øÈ£ ÀÔ·Â
-	3) client, server Á¾·á½Ã Ctrl + c ·Î Á¾·á
+##3. ì‹¤í–‰ê³¼ì •
+	1) ./server ì‹¤í–‰ -> ì¸ì¦ì„œ ë§Œë“¤ë•Œ ì‚¬ìš©í–ˆë˜ ë¹„ë°€ë²ˆí˜¸ ìž…ë ¥
+	2) ./client ì‹¤í–‰ (ë‹¤ì¤‘ì‹¤í–‰ê°€ëŠ¥) -> ì¸ì¦ì„œ ë§Œë“¤ë•Œ ì‚¬ìš©í–ˆë˜ ë¹„ë°€ë²ˆí˜¸ ìž…ë ¥
+	3) client, server ì¢…ë£Œì‹œ Ctrl + c ë¡œ ì¢…ë£Œ
 
-cf) zipÆÄÀÏ¿¡ Á¦°øµÈ ÀÎÁõ¼­ÀÇ ºñ¹Ð¹øÈ£´Â 130613ÀÔ´Ï´Ù.
+cf) zipíŒŒì¼ì— ì œê³µëœ ì¸ì¦ì„œì˜ ë¹„ë°€ë²ˆí˜¸ëŠ” 130613ìž…ë‹ˆë‹¤.
